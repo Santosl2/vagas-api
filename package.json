@@ -1,0 +1,12 @@
+{
+  "name": "vagas",
+  "version": "1.0.0",
+  "description": "Algoritimo para pegar vagas do GitHub",
+  "main": "src/index.js",
+  "repository": "git@github.com:Santosl2/vagas-api.git",
+  "author": "Santosl2c <mfilype2019@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
