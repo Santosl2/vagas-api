@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,                    
+    "target": "es2016",                                  
+    "module": "commonjs",                                
+    "rootDir": "./src",                                  
+    "baseUrl": "./src",                                  
+    "outDir": "./dist",                                   
+    "paths": {
+      "@config/*": ["config/*"],
+      "@src/*": ["src/*"]
+    },                                                  
+    "esModuleInterop": true,                                   
+    "forceConsistentCasingInFileNames": true,            
+    "strict": true,                                           
+    "strictPropertyInitialization": false,                    
+    "skipLibCheck": true                                 
+  },
+  "exclude":[
+    "./node_modules"
+  ]
+}
