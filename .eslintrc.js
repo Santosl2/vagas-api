@@ -20,6 +20,8 @@ module.exports = {
     "unused-imports",
   ],
   rules: {
+    "import/no-unresolved": "off",
+
     "jsx-quotes": ["error", "prefer-double"],
     "unused-imports/no-unused-imports": "error",
     "import-helpers/order-imports": [
@@ -28,6 +30,15 @@ module.exports = {
         newlinesBetween: "always", // new line between groups
         groups: ["module", "/^@/", ["parent", "sibling", "index"]],
         alphabetize: { order: "asc", ignoreCase: true },
+      },
+    ],
+    "import/extensions": [
+      "error",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
       },
     ],
   },
