@@ -1,13 +1,15 @@
-export interface Labels {
+export interface ILabels {
   id: string;
   name: string;
   color: string;
   description?: string;
 }
 
-export interface JobsResponse {
+export interface IJobsResponse {
+  id?: number;
   title: string;
   body: string;
   html_url: string;
-  labels: Labels[];
+  labels?: ILabels[];
+  publishedTime?: string;
 }
