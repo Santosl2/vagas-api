@@ -1,24 +1,23 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable import/extensions */
 
+import { IJobsResponse, ILabels } from "interface/Jobs";
 import { api } from "services/API";
 
-import { JobsResponse, Labels } from "./Jobs.types";
-
-async function getRepos(url: string[]): Promise<JobsResponse[]> {
-  return Promise.all(url.map(u => api.get<JobsResponse[]>(`${u}/issues`))).then(
-    values => values[0].data,
-  );
+async function getRepos(url: string[]): Promise<IJobsResponse[]> {
+  return Promise.all(
+    url.map(u => api.get<IJobsResponse[]>(`${u}/issues`)),
+  ).then(values => values[0].data);
 }
 
 export async function getAllJobs(urlRepo: string[]) {
-  const repoSaves: JobsResponse[] = [];
+  const repoSaves: IJobsResponse[] = [];
 
   const repos = await getRepos(urlRepo);
 
   repos.forEach(repo => {
     const labels = repo.labels.map(label => {
-      const obj: Labels = {
+      const obj: ILabels = {
         id: label.id,
         name: label.name,
         description: label.description,
