@@ -6,8 +6,10 @@ export interface ILabels {
 }
 
 export interface IJobsResponse {
+  id?: number;
   title: string;
   body: string;
   html_url: string;
   labels?: ILabels[];
+  publishedTime?: string;
 }

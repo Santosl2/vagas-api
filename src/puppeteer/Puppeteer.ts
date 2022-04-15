@@ -3,9 +3,9 @@ import { IOptions } from "interface/IOptions";
 import Puppeteer, { Browser, Page } from "puppeteer-core";
 
 class PuppeteerCore {
-  private page: Page;
+  private page: Page | undefined;
 
-  private browser: Browser;
+  private browser: Browser | undefined;
 
   private options: IOptions;
 
@@ -35,7 +35,7 @@ class PuppeteerCore {
       options = {
         args: [],
         executablePath: exePath,
-        headless: false,
+        headless: true,
       };
     } else {
       options = {
@@ -68,8 +68,10 @@ class PuppeteerCore {
   }
 
   public async closeBrowserAndPage() {
-    this.page.close();
-    this.browser.close();
+    await this.page?.close();
+    await this.browser?.close();
+    this.page = undefined;
+    this.browser = undefined;
   }
 }
 

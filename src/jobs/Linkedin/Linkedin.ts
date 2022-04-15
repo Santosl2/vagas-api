@@ -17,15 +17,14 @@ class Linkedin {
   public async findJobs(url: string) {
     const job = await this.puppeteer.goToPage(url);
 
-    const {
-      _remoteObject: { description: jobs },
-    } = await job.evaluateHandle(() => {
+    const jobs = await job.evaluate(() => {
+      const obj: IJobsResponse[] = [];
+
       const findJobs = document.querySelectorAll(
         ".jobs-search__results-list > li",
       );
 
-      const obj: IJobsResponse[] = [];
-      let timeout;
+      // let timeout;
 
       Array.from(findJobs).forEach(el => {
         const anchorURL = el.querySelector("a");
@@ -39,36 +38,38 @@ class Linkedin {
           .querySelector(".base-search-card__subtitle")
           ?.textContent?.trim();
 
+        const publishedTime = el.querySelector("time")?.textContent?.trim();
+
         // Get Job description
+        // timeout = setTimeout(() => {
+        //   anchorURL?.click();
+
+        //   description =
+        //     el
+        //       .querySelector(".core-section-container__content")
+        //       ?.textContent?.trim() || "";
+        // }, 1000);
+        // clearTimeout(timeout);
 
         if (name && enterprise && html_url) {
-          let description = "";
-
-          timeout = setTimeout(() => {
-            anchorURL?.click();
-
-            description =
-              el
-                .querySelector(".core-section-container__content")
-                ?.textContent?.trim() || "";
-          }, 1000);
+          const description = "";
 
           obj.push({
-            body: description,
-            html_url,
+            id: obj.length + 1,
             title: `${name} na ${enterprise}`,
+            publishedTime,
+            html_url,
+            body: description,
           });
-
-          clearTimeout(timeout);
         }
       });
-
-      console.log(obj);
 
       return obj;
     });
 
-    console.log(jobs);
+    await this.puppeteer.closeBrowserAndPage();
+
+    return jobs;
   }
 }
 
