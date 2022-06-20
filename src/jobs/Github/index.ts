@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable import/extensions */
 
-import { IJobsResponse, ILabels } from "interface/Jobs";
-import { api } from "services/API";
+import { IJobsResponse, ILabels } from "@/interface/Jobs";
+import { api } from "@/services/API";
 
 async function getRepos(url: string[]): Promise<IJobsResponse[]> {
   return Promise.all(

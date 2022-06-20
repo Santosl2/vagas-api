@@ -1,5 +1,6 @@
 import { Request, Response, Router } from "express";
-import { getCache, saveOnCache } from "middlewares/Cache";
+
+import { getCache, saveOnCache } from "@/middlewares/Cache";
 
 import Linkedin from ".";
 import { CACHE_KEY } from "../../constants";
@@ -7,8 +8,6 @@ import { CACHE_KEY } from "../../constants";
 const router = Router();
 
 const linkedin = new Linkedin();
-
-const jobsFilter = {};
 
 router.get("/:rank/:type", async (req: Request, res: Response) => {
   const key = CACHE_KEY(req);

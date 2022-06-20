@@ -8,9 +8,13 @@
     "baseUrl": "./src/",                                  
     "outDir": "./dist",                                   
     "paths": {
-      "@config/*": ["config/*"],
-      "@src/*": ["src/*"],
-      "@puppeteer/*": ["puppeteer/*"]
+      "@/config/*": ["config/*"],
+      "@/puppeteer/*": ["utils/puppeteer/*"],
+      "@/utils/*": ["utils/*"],
+      "@/interface/*": ["interface/*"],
+      "@/services/*": ["services/*"],
+      "@/middlewares/*": ["middlewares/*"],
+      "@/jobs/*": ["jobs/*"],
     },                                                  
     "esModuleInterop": true,                                   
     "forceConsistentCasingInFileNames": true,            

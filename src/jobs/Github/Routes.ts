@@ -1,16 +1,16 @@
 import { Request, Response, Router } from "express";
 import { getAllJobs } from "jobs";
 
-import { backRepos, frontRepos } from "@config/ReposConfig";
+import { backRepos, frontRepos } from "@/config/ReposConfig";
 
-const jobsRouter = Router();
+const githubRouter = Router();
 
 const getReposConfig: any[string] = {
   backend: backRepos,
   frontend: frontRepos,
 };
 
-jobsRouter.get("/:type", async (req: Request, res: Response) => {
+githubRouter.get("/:type", async (req: Request, res: Response) => {
   const { type } = req.params ?? "frontend";
 
   const allJobs = await getAllJobs(getReposConfig[type]);
@@ -31,4 +31,4 @@ jobsRouter.get("/:type", async (req: Request, res: Response) => {
   return res.status(404).json({ message: "Not Found" });
 });
 
-export default jobsRouter;
+export default githubRouter;
