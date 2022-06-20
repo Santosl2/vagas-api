@@ -16,7 +16,7 @@ export async function getAllJobs(urlRepo: string[]) {
   const repos = await getRepos(urlRepo);
 
   repos.forEach(repo => {
-    const labels = repo.labels.map(label => {
+    const labels = repo.labels?.map(label => {
       const obj: ILabels = {
         id: label.id,
         name: label.name,

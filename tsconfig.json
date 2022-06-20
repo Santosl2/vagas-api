@@ -4,8 +4,8 @@
     "emitDecoratorMetadata": true,                    
     "target": "es2016",                                  
     "module": "commonjs",                                
-    "rootDir": "./src",                                  
-    "baseUrl": "./src",                                  
+    "rootDir": "./src/",                                  
+    "baseUrl": "./src/",                                  
     "outDir": "./dist",                                   
     "paths": {
       "@config/*": ["config/*"],
