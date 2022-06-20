@@ -1,8 +1,8 @@
 {
   "name": "vagas",
   "version": "1.0.0",
-  "description": "Algoritimo para pegar vagas de repositorios",
-  "main": "index.js",
+  "description": "Algoritmo para pegar vagas de repositorios",
+  "main": "server.ts",
   "repository": "git@github.com:Santosl2/vagas-api.git",
   "author": "Santosl2c <mfilype2019@gmail.com>",
   "license": "MIT",
@@ -14,10 +14,12 @@
     "axios-cache-adapter": "^2.7.3",
     "chrome-aws-lambda": "^10.1.0",
     "express": "^4.17.3",
+    "memory-cache": "^0.2.0",
     "puppeteer-core": "^13.5.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/memory-cache": "^0.2.2",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "eslint": "^8.13.0",

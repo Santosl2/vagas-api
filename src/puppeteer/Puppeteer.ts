@@ -35,7 +35,7 @@ class PuppeteerCore {
       options = {
         args: [],
         executablePath: exePath,
-        headless: true,
+        headless: false,
       };
     } else {
       options = {
