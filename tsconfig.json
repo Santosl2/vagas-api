@@ -12,6 +12,7 @@
       "@/puppeteer/*": ["utils/puppeteer/*"],
       "@/utils/*": ["utils/*"],
       "@/interface/*": ["interface/*"],
+      "@/constants": ["constants/index"],
       "@/services/*": ["services/*"],
       "@/middlewares/*": ["middlewares/*"],
       "@/jobs/*": ["jobs/*"],
