@@ -1,6 +1,7 @@
 import chrome from "chrome-aws-lambda";
-import { IOptions } from "interface/IOptions";
 import Puppeteer, { Browser, Page } from "puppeteer-core";
+
+import { IOptions } from "@/interface/IOptions";
 
 class PuppeteerCore {
   private page: Page | undefined;

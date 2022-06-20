@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import chrome from "chrome-aws-lambda";
-import { IOptions } from "interface/IOptions";
+
+import { IOptions } from "@/interface/IOptions";
 
 const chromeExecPaths = {
   win32: "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",

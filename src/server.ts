@@ -1,6 +1,7 @@
 import express from "express";
-import linkedinRouter from "jobs/Linkedin/Routes";
-import jobsRouter from "routes";
+
+import githubRouter from "@/jobs/Github/Routes";
+import linkedinRouter from "@/jobs/Linkedin/Routes";
 
 // eslint-disable-next-line import/extensions
 import "./jobs";
@@ -8,7 +9,7 @@ import "./jobs";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use("/jobs", jobsRouter);
+app.use("/github", githubRouter);
 app.use("/linkedin", linkedinRouter);
 
 app.listen(PORT, () => {

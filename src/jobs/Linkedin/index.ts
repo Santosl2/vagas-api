@@ -2,9 +2,8 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
 
-import { IJobsResponse } from "interface/Jobs";
-
-import PuppeteerCore from "@puppeteer/Puppeteer";
+import { IJobsResponse } from "@/interface/Jobs";
+import PuppeteerCore from "@/puppeteer/Puppeteer";
 
 class Linkedin {
   puppeteer: PuppeteerCore;
