@@ -3,7 +3,7 @@ import linkedinRouter from "jobs/Linkedin/Routes";
 import jobsRouter from "routes";
 
 // eslint-disable-next-line import/extensions
-import "./jobs/index";
+import "./jobs";
 
 const app = express();
 const PORT = process.env.PORT || 3000;

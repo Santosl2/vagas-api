@@ -1,3 +1,4 @@
+/* eslint-disable no-promise-executor-return */
 /* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
 
@@ -39,17 +40,6 @@ class Linkedin {
           ?.textContent?.trim();
 
         const publishedTime = el.querySelector("time")?.textContent?.trim();
-
-        // Get Job description
-        // timeout = setTimeout(() => {
-        //   anchorURL?.click();
-
-        //   description =
-        //     el
-        //       .querySelector(".core-section-container__content")
-        //       ?.textContent?.trim() || "";
-        // }, 1000);
-        // clearTimeout(timeout);
 
         if (name && enterprise && html_url) {
           const description = "";
